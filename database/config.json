@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "root",
+    "database": "egg-sql",
+    "password": "j5JSNM9LkkXOdv52",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "database": "egg-sql-unittest",
+    "password": "j5JSNM9LkkXOdv52",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
