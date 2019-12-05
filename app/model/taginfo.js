@@ -7,7 +7,7 @@ module.exports = app => {
     type: STRING(10),
   });
 
-  TagInfo.associate = function () {
+  TagInfo.associate = function() {
     //  图片与 Tag 的多态多对多
     app.model.Image.belongsToMany(app.model.Tag, {
       through: {

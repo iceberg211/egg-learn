@@ -10,7 +10,7 @@ module.exports = app => {
     user_id: INTEGER,
   });
 
-  Post.associate = function () {
+  Post.associate = function() {
     Post.belongsTo(app.model.Category);
     app.model.Category.hasMany(Post);
   };
