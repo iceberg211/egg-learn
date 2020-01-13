@@ -42,13 +42,22 @@ module.exports = appInfo => {
   //   reconnectInterval: 500,
   // };
 
+  exports.validator = {
+    enable: true,
+    package: 'egg-validate',
+  };
+
+  exports.react = {
+    enable: true,
+    package: 'egg-view-react',
+  };
 
   config.sequelize = {
     dialect: 'mysql',
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: 'j5JSNM9LkkXOdv52',
+    password: '',
     database: 'egg-sql',
   };
 

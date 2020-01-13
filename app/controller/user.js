@@ -55,6 +55,11 @@ class UserController extends Controller {
     await user.destroy();
     ctx.status = 200;
   }
+
+  async signUp() {
+    this.ctx.body = '注册';
+  }
+
 }
 
 module.exports = UserController;

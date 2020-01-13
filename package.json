@@ -7,12 +7,18 @@
     "declarations": true
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^3.0.0",
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^5.2.0",
     "egg-view-nunjucks": "^2.2.0",
+    "egg-view-react": "^1.1.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.0.1",
-    "uuid": "^3.3.3"
+    "ramda": "^0.26.1",
+    "uuid": "^3.3.3",
+    "validator": "^12.1.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -39,8 +45,10 @@
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
     "m:new": "sequelize migration:create",
+    "m:seed": "sequelize seed:create",
     "m:up": "sequelize db:migrate",
-    "m:down": "sequelize db:migrate:undo"
+    "m:down": "sequelize db:migrate:undo",
+    "m:seeds": "sequelize db:seed:all"
   },
   "ci": {
     "version": "10"

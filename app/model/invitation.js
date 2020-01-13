@@ -14,7 +14,7 @@ module.exports = app => {
   /**
  * * 检验邀请码是否有效
  * @param {string} code 邀请码
- * @return {Promise<boolean>} 是否有效
+ * @return {Promise<boolean>} 是否有效,使用findeOne
  */
   Invitation.exits = async code => {
     const instance = await Invitation.findOne({
