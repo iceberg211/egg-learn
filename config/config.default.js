@@ -47,11 +47,6 @@ module.exports = appInfo => {
     package: 'egg-validate',
   };
 
-  exports.react = {
-    enable: true,
-    package: 'egg-view-react',
-  };
-
   config.sequelize = {
     dialect: 'mysql',
     host: 'localhost',
@@ -60,6 +55,13 @@ module.exports = appInfo => {
     password: '',
     database: 'egg-sql',
   };
+
+  config.security = {
+    csrf: {
+      ignoreJSON: true,
+    },
+  };
+
 
   // add your user config here
   const userConfig = {

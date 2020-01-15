@@ -1,6 +1,5 @@
 'use strict';
 
-const init = require('./util').initRouterMap;
 
 /**
  * @param {Egg.Application} app - egg application
@@ -8,5 +7,6 @@ const init = require('./util').initRouterMap;
 module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
-  init('/api/v1', require('./api')(controller), router);
+  router.get('/shops', controller.shop.list);
+  router.post('/api/signUp', controller.user.signUp);
 };
