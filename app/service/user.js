@@ -42,12 +42,6 @@ class User extends Service {
     return invitation;
   }
 
-
-  /**
-   *
-   * @memberof User
-   *
-   */
   async singUp(body) {
     const { code, email, password, username } = body;
     const invitation = await this.checkInvitation(code);
@@ -59,7 +53,6 @@ class User extends Service {
     await invitation.save();
     const invitations = await this.generatorInvitation(user.id, 5);
     return { user, invitations };
-
   }
 }
 

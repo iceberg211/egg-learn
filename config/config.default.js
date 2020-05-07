@@ -2,28 +2,17 @@
 
 'use strict';
 
-/**
- * @param {Egg.EggAppInfo} appInfo app info
- */
 module.exports = appInfo => {
-  /**
-   * built-in config
-   * @type {Egg.EggAppConfig}
-   **/
-  const config = exports = {};
+
+  const config = {};
+
+  config.description = 'egg学校教程';
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1575448498486_9411';
 
-  // add your middleware config here
-  config.middleware = [ 'robot' ];
-
-  config.view = {
-    defaultViewEngine: 'nunjucks',
-    mapping: {
-      '.tpl': 'nunjucks',
-    },
-  };
+  // 中间件
+  config.middleware = [];
 
   config.news = {
     pageSize: 5,
@@ -35,12 +24,24 @@ module.exports = appInfo => {
       /Baiduspider/i,
     ],
   };
-  // config.mongoose = {
-  //   url: 'mongodb://127.0.0.1:27017/egg_learn',
-  //   server: { poolSize: 20 },
-  //   reconnectTries: 10,
-  //   reconnectInterval: 500,
-  // };
+
+  // 模板引擎
+  exports.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.nj': 'nunjucks',
+    },
+  };
+
+  config.redis = {
+    client: {
+      host: process.env.EGG_REDIS_HOST || '127.0.0.1',
+      port: process.env.EGG_REDIS_PORT || 6379,
+      password: process.env.EGG_REDIS_PASSWORD || '',
+      db: process.env.EGG_REDIS_DB || '0',
+    },
+  };
+
 
   exports.validator = {
     enable: true,
@@ -62,6 +63,11 @@ module.exports = appInfo => {
     },
   };
 
+
+  config.passportLocal = {
+    usernameField: 'name',
+    passwordField: 'pass',
+  };
 
   // add your user config here
   const userConfig = {

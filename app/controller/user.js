@@ -18,6 +18,14 @@ class UserController extends Controller {
     ctx.body = result;
   }
 
+  async index() {
+    const { ctx } = this;
+    ctx.body = {
+      code: 200,
+      data: [],
+    };
+  }
+
 }
 
 module.exports = UserController;
