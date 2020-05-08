@@ -2,18 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <!-- meta -->
-    <meta charset="utf-8" />
-    <meta name="description" content="<%= config.description %>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="description" content="<%= config.description %>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- see http://smerity.com/articles/2013/where_did_all_the_http_referrers_go.html -->
-    <meta name="referrer" content="always" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="referrer" content="always"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+/>
 
     <!-- Compiled and minified JavaScript -->
     <script
@@ -23,8 +23,27 @@
     ></script>
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a href="sass.html">Sass</a>
+            </li>
+            <li>
+              <a href="badges.html">组件</a>
+            </li>
+            <li>
+              <a href="collapsible.html">JavaScript</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
     <div id="main">
-      <%- body %>
+      {% block content %}{% endblock %}
     </div>
 
     <footer class="page-footer" id="footer">
@@ -39,10 +58,18 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+              </li>
             </ul>
           </div>
         </div>

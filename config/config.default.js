@@ -4,7 +4,7 @@
 
 module.exports = appInfo => {
 
-  const config = {};
+  const config = (exports = {});
 
   config.description = 'egg学校教程';
 
@@ -26,10 +26,10 @@ module.exports = appInfo => {
   };
 
   // 模板引擎
-  exports.view = {
+  config.view = {
     defaultViewEngine: 'nunjucks',
     mapping: {
-      '.nj': 'nunjucks',
+      '.njk': 'nunjucks',
     },
   };
 
