@@ -2,7 +2,6 @@
 'use strict';
 
 const Controller = require('egg').Controller;
-// const { signSchemas } = require('../schemas/user');
 
 class UserController extends Controller {
   async signUp() {

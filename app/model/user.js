@@ -3,10 +3,12 @@
 const bcrypt = require('bcryptjs');
 
 module.exports = app => {
+
   const { INTEGER, STRING, TINYINT } = app.Sequelize;
   const User = app.model.define('User', {
     email: STRING(40),
     password: STRING,
+    // 自增
     inviter_id: INTEGER,
     username: STRING(40),
     weibo: STRING(40),
@@ -24,9 +26,12 @@ module.exports = app => {
   });
 
   User.associate = function() {
+    // 设置联合，意味着每一个邀请券都有属于用户的属性
     app.model.Invitation.belongsTo(app.model.User, {
       foreignKey: 'user_id',
     });
+
+    // 关联
     app.model.User.hasMany(app.model.Invitation, {
       foreignKey: 'user_id',
     });

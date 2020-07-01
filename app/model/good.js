@@ -2,7 +2,7 @@
 
 module.exports = app => {
   const { STRING, INTEGER } = app.Sequelize;
-  const Shop = app.model.define('Goods',
+  const Goods = app.model.define('Goods',
     {
       id: {
         type: INTEGER,
@@ -21,5 +21,5 @@ module.exports = app => {
     });
 
 
-  return Shop;
+  return Goods;
 };
